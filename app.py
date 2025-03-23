@@ -16,14 +16,13 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///traintrack.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 talisman = Talisman(
-   app,
-   content_security_policy={
-      'default-src': "'self'",
-       'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
-       'script-src': "'self' 'unsafe-inline'",
-        'img-src': "'self' data:",
-    },
-    content_security_policy_nonce_in=['script-src', 'style-src'],
+    app,
+    content_security_policy={
+        'default-src': "'self'",
+        'style-src': "'self'",
+        'script-src': "'self'",
+        'img-src': "'self' data:"
+    }
 )
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
