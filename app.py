@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from forms import LoginForm, AlgorithmForm, RegistrationForm
 import json
 from datetime import datetime
-#from flask_talisman import Talisman
+from flask_talisman import Talisman
 
 #pip install flask flask-sqlalchemy flask-migrate flask-wtf wtforms werkzeug email_validator flask_talisman
 #install extension "SQLite Viewer" for better database readability
@@ -15,16 +15,16 @@ app.secret_key = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///traintrack.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-#talisman = Talisman(
- #   app,
-  #  content_security_policy={
-   #     'default-src': "'self'",
-    #    'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
-     #   'script-src': "'self' 'unsafe-inline'",
-      #  'img-src': "'self' data:",
-    #},
-    #content_security_policy_nonce_in=['script-src', 'style-src'],
-#)
+talisman = Talisman(
+   app,
+   content_security_policy={
+      'default-src': "'self'",
+       'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
+       'script-src': "'self' 'unsafe-inline'",
+        'img-src': "'self' data:",
+    },
+    content_security_policy_nonce_in=['script-src', 'style-src'],
+)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
