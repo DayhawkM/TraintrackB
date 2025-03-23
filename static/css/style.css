@@ -1,0 +1,627 @@
+/* ========================================= */
+/* ============ General Styles ============= */
+/* ========================================= */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #f4f4f9, #d6e4f0);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ========================================= */
+/* ============ Navigation ================ */
+/* ========================================= */
+
+nav {
+    background-color: #222;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #4CAF50;
+}
+
+
+/* ========================================= */
+/* ============ Headings ================== */
+/* ========================================= */
+
+h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    color: #222;
+    margin: 30px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Green Highlighted Span for Fitness Feel */
+h1 span {
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 3.8rem;
+}
+
+/* Subtle Line Under Header */
+h1::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    background-color: #4CAF50;
+    margin: 10px auto;
+    border-radius: 2px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards 0.5s;
+}
+
+/* Fade-In Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================= */
+/* ============ Index Page ================ */
+/* ========================================= */
+
+.index-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px;
+    position: relative;
+}
+
+/* Hero Image */
+.index-image {
+    width: 45%;
+    max-width: auto;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideInLeft 1.5s ease-out forwards;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Text Box */
+.index-text {
+    width: 45%;
+    max-width: 400px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1.5s ease-out forwards 0.5s;
+}
+
+/* Text Content */
+.index-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+
+/* =============================== */
+/* =========== About Me ========== */
+/* =============================== */
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; 
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px;
+    position: relative;
+}
+
+/* Image Animation */
+.about-image {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideInLeft 1.5s ease-out forwards;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* About Me Text Box */
+.about-text {
+    width: 45%;
+    max-width: 400px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1.5s ease-out forwards 0.5s;
+}
+
+/* Text Content */
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Keyframes */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* ========================================= */
+/* ============ Animations ================= */
+/* ========================================= */
+
+/* Slide in from Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide Up from Bottom */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================= */
+/* ============ My Plans Page ============== */
+/* ========================================= */
+
+.plans-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plan {
+    background: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.plan:hover {
+    background-color: #e6f7e6;
+}
+
+/* Workout Days - Initially Hidden */
+.day-list {
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Each Workout Day */
+.day {
+    margin: 10px 0;
+    cursor: pointer;
+    background: #e9ecef;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.day:hover {
+    background-color: #dbe9db;
+}
+
+/* Exercise Form - Initially Hidden */
+.exercise-form {
+    display: none;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background: #f8f9fa;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* Inputs for reps and weight */
+.exercise-form input[type="number"], 
+.exercise-form input[type="text"] {
+    width: 60px;
+    margin: 5px;
+}
+
+/* Save Workout Button */
+.save-button {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+    background-color: #45a049;
+}
+
+/* Clear Plans Button */
+.clear-plans-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.clear-plans-button {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clear-plans-button:hover {
+    background-color: darkred;
+}
+
+/* ========================================= */
+/* ============ Expand/Collapse Animations ============== */
+/* ========================================= */
+
+/* Slide Down for Day List */
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+
+.day-list {
+    overflow: hidden;
+    animation: slideDown 0.5s ease-in-out forwards;
+}
+
+/* Slide Down for Exercise Form */
+@keyframes slideDownExercises {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 300px;
+        opacity: 1;
+    }
+}
+
+.exercise-form {
+    overflow: hidden;
+    animation: slideDownExercises 0.5s ease-in-out forwards;
+}
+
+/* ========================================= */
+/* ============ Past Workouts Page ========= */
+/* ========================================= */
+
+.past-workouts-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Workout Cards */
+.workout-card {
+    background: linear-gradient(to bottom right, #f9f9f9, #eef1f7);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateX(50px);
+    opacity: 0;
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Workout Date Heading */
+.workout-card h3 {
+    color: #4CAF50;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Workout Tables */
+.workout-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.workout-table th, .workout-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.workout-table th {
+    background: #4CAF50;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.workout-table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/* Hover effect for rows */
+.workout-table tr:hover {
+    background-color: #e8f5e9;
+}
+
+/* Cardio Highlight */
+.cardio {
+    font-style: italic;
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Clear Workouts Button */
+.clear-workouts-form {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.clear-workouts-button {
+    padding: 12px 20px;
+    background: linear-gradient(to right, #d9534f, #c9302c);
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.clear-workouts-button:hover {
+    background: linear-gradient(to right, #c9302c, #b52b27);
+    transform: scale(1.05);
+}
+
+/* ========================================= */
+/* ============ Animations ================= */
+/* ========================================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========================================= */
+/* ============ Workout Generator Page ===== */
+/* ========================================= */
+
+/* Wrapper for Full-Centered Layout */
+.workout-generator-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Centers within viewport */
+}
+
+/* Workout Generator Box */
+.workout-generator-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Centering the Title */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+/* Form Styling */
+.workout-generator-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+.workout-generator-container label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+.workout-generator-container select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workout-generator-container select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0px 0px 8px rgba(76, 175, 80, 0.4);
+    outline: none;
+}
+
+/* Submit Button */
+.workout-generator-container .btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #4CAF50, #45a049);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.workout-generator-container .btn:hover {
+    background: linear-gradient(to right, #45a049, #3e9140);
+    transform: scale(1.05);
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

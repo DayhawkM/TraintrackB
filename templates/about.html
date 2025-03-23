@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}About Me{% endblock %}
+
+{% block content %}
+    <h1>About <span>Mo</span></h1>
+
+    <div class="about-container">
+        <img src="{{ url_for('static', filename='images/hero2.jpg') }}" alt="About Image" class="about-image">
+    
+        <div class="container about-text">
+            <p>Hi, I'm Mo! I'm a computer science student with a passion for both coding and fitness. I created this platform to merge my love for technology with my dedication to staying healthy and active.</p>
+            <p>As part of my studies, I designed a Flask-based algorithm to generate personalized workout plans for users. The goal is to help others build effective routines based on their age, experience level, and fitness goals, so they can achieve their best selves!</p>
+            <p>Whether you're just starting your fitness journey or you're a seasoned athlete, I hope this platform inspires you to stay consistent, push your limits, and prioritize your health. Let's get stronger together!</p>
+        </div>    
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Your Workout Plan{% endblock %}
+
+{% block content %}
+    <h1>Your {{ days }}-Day Workout Plan</h1>
+
+    <div class="table-container">
+        <table class="workout-table">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Exercises</th>
+                </tr>
+            </thead>
+            <tbody> 
+                {% for day, data in workout_days.items() %}
+                    <tr>
+                        <td>{{ day }}</td>
+                        <td>
+                            <ul class="exercise-list">
+                                {% for exercise in data.exercises %}
+                                    <li>{{ exercise }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% if data.cardio %}
+                                <p class="cardio">Cardio: {{ data.cardio }}</p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <form action="/save_plan" method="POST" class="form-center">
+        <button type="submit" class="btn">Save This Plan</button>
+    </form>
+{% endblock %}

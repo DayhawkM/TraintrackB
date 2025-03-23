@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to Mo's Fitness Page{% endblock %}
+
+{% block content %}
+    <h1>Welcome to <span>Mo's Fitness Page</span></h1>
+
+    <div class="index-container">
+        <img src="{{ url_for('static', filename='images/hero1.jpg') }}" alt="Fitness Image" class="index-image">
+    
+        <div class="container index-text">
+            <p>Welcome to my fitness app. I'm here to help you design a workout plan that meets your needs and can help you track your progress. My app combines current, up-to-date 
+                fitness industry expertise to recommend you the most reliable and effective plans to reach your goals.
+            </p>
+            <p><strong>Let’s build a stronger, healthier you!</strong></p>
+            <a href="/algorithm" class="cta-button">Get Started</a>
+        </div>
+    </div>
+    
+    
+    </div>
+{% endblock %}

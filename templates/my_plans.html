@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}My Workout Plans{% endblock %}
+
+{% block content %}
+    <div class="plans-container">
+        {% for plan in plans %}
+        <div class="plan" onclick="toggleDays('{{ plan.id }}')">
+            <h3>Plan: {{ plan.id }}</h3>
+            <p><strong>Goal:</strong> {{ plan.goals.replace('_', ' ') | capitalize }}</p>
+            <p><strong>Experience Level:</strong> {{ plan.experience_level.replace('_', ' ') | capitalize }}</p>
+        </div>
+        
+        <div class="day-list" id="day-list-{{ plan.id }}">
+            {% for day, data in plan.workout_data.items() %}
+                <div class="day" onclick="toggleExercises('{{ plan.id }}', '{{ day }}')">
+                    <h4>{{ day }}</h4>
+                </div>
+
+                <div class="exercise-form" id="exercise-form-{{ plan.id }}-{{ day }}">
+                    <form method="POST" action="/save_workout">
+                        <input type="hidden" name="plan_id" value="{{ plan.id }}">
+                        <input type="hidden" name="day" value="{{ day }}">
+
+                        {% for exercise in data.exercises %}
+                            <div>
+                                <label>{{ exercise }} Reps:</label>
+                                <input type="number" name="{{ exercise }}_reps" required>
+                                <label>Weight (kg):</label>
+                                <input type="number" name="{{ exercise }}_weight" step="0.1" required>
+                            </div>
+                        {% endfor %}
+
+                        {% if data.cardio %}
+                            <p class="cardio">Cardio: {{ data.cardio }}</p>
+                            <label>Time (minutes):</label>
+                            <input type="number" name="cardio_time" required>
+                        {% endif %}
+
+                        <button type="submit" class="save-button">Save Workout</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No workout plans available.</p>
+        {% endfor %}
+    </div>
+
+    <form action="/clear_plans" method="POST" class="clear-plans-form">
+        <button type="submit" class="clear-plans-button">Clear All My Plans</button>
+    </form>
+
+    <script>
+        function toggleDays(planId) {
+            let dayList = document.getElementById("day-list-" + planId);
+            if (dayList.style.display === "none" || dayList.style.display === "") {
+                dayList.style.display = "block";
+            } else {
+                dayList.style.display = "none";
+            }
+        }
+    
+        function toggleExercises(planId, dayName) {
+            let exerciseForm = document.getElementById(`exercise-form-${planId}-${dayName}`);
+            if (exerciseForm.style.display === "none" || exerciseForm.style.display === "") {
+                exerciseForm.style.display = "block";
+            } else {
+                exerciseForm.style.display = "none";
+            }
+        }
+    </script>
+{% endblock %}

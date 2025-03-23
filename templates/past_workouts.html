@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Past Workouts{% endblock %}
+
+{% block content %}
+    <h1>Past Workouts</h1>
+
+    <div class="past-workouts-container">
+        {% for workout in past_workouts %}
+        <div class="workout-card">
+            <h3>Workout Date: {{ workout.timestamp.strftime('%Y-%m-%d') }}</h3>
+            <p><strong>Plan ID:</strong> {{ workout.plan_id }}</p>
+
+            {% for day, details in workout.workout_data.items() %}
+                <h4>Day: {{ day }}</h4>
+
+                {% if "exercises" in details and details.exercises %}
+                <table class="workout-table">
+                    <tr>
+                        <th>Exercise</th>
+                        <th>Reps</th>
+                        <th>Weight (kg)</th>
+                    </tr>
+                    {% for exercise, exercise_data in details.exercises.items() %}
+                        <tr>
+                            <td>{{ exercise }}</td>
+                            <td>{{ exercise_data.reps }}</td>
+                            <td>{{ exercise_data.weight }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                    <p>No strength exercises recorded for this day.</p>
+                {% endif %}
+
+                {% if "cardio" in details %}
+                    <p class="cardio"><strong>Cardio:</strong> {{ details.cardio.time }} minutes</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No past workouts recorded yet.</p>
+        {% endfor %}
+    </div>
+
+    <form action="/clear_past_workouts" method="POST" class="clear-workouts-form">
+        <button type="submit" class="clear-workouts-button">Clear Past Workouts</button>
+    </form>
+{% endblock %}

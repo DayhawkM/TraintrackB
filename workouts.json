@@ -1,0 +1,117 @@
+{
+  "fat_loss": {
+    "beginner": {
+      "days": 3,
+      "workouts": {
+        "Day 1": {
+          "exercises": ["Bench Press", "Dumbbell Rows", "Shoulder Press", "Bicep Curls"],
+          "cardio": "15-minute incline treadmill walk"
+        },
+        "Day 2": {
+          "exercises": ["Squats", "Deadlifts", "Leg Press", "Calf Raises"],
+          "cardio": "10-minute cycling at moderate pace"
+        },
+        "Day 3": {
+          "exercises": ["Lat Pulldown", "Chest Flys", "Tricep Extensions", "Lunges"],
+          "cardio": "Rowing machine intervals (5x 30s sprints)"
+        }
+      }
+    },
+    "intermediate": {
+      "days": 4,
+      "workouts": {
+        "Day 1": {
+          "exercises": ["Incline Bench Press", "Pull-ups", "Bicep Curls", "Dips"],
+          "cardio": "20-minute treadmill walk (incline 10%)"
+        },
+        "Day 2": {
+          "exercises": ["Squats", "Romanian Deadlifts", "Lunges", "Leg Curls"],
+          "cardio": "10-minute jump rope"
+        },
+        "Day 3": {
+          "exercises": ["Overhead Shoulder Press", "Lateral Raises", "Face Pulls", "Tricep Kickbacks"],
+          "cardio": "Rowing sprints (30s sprint, 30s rest x 6)"
+        },
+        "Day 4": {
+          "exercises": ["Deadlifts", "Seated Cable Rows", "Hamstring Curls", "Calf Raises"]
+        }
+      }
+    },
+    "expert": {
+      "days": 5,
+      "workouts": {
+        "Day 1": {
+          "exercises": ["Bench Press", "Incline Dumbbell Press", "Chest Flys"],
+          "cardio": "15-minute high-speed treadmill walk"
+        },
+        "Day 2": {
+          "exercises": ["Squats", "Bulgarian Split Squats", "Calf Raises"],
+          "cardio": "10-minute cycling sprints (30s sprint, 30s rest)"
+        },
+        "Day 3": {
+          "exercises": ["Deadlifts", "Pull-ups", "Barbell Rows"],
+          "cardio": "Rowing intervals (5x 45s sprints)"
+        },
+        "Day 4": {
+          "exercises": ["Overhead Shoulder Press", "Lateral Raises", "Face Pulls"]
+        },
+        "Day 5": {
+          "exercises": ["Tricep Dips", "Hammer Curls", "Cable Crossovers"]
+        }
+      }
+    }
+  },
+  "muscle_building": {
+    "beginner": {
+      "days": 3,
+      "workouts": {
+        "Day 1": {
+          "exercises": ["Bench Press", "Dumbbell Rows", "Overhead Press", "Bicep Curls"]
+        },
+        "Day 2": {
+          "exercises": ["Deadlifts", "Squats", "Leg Press", "Calf Raises"]
+        },
+        "Day 3": {
+          "exercises": ["Lat Pulldown", "Chest Flys", "Tricep Extensions", "Lunges"]
+        }
+      }
+    },
+    "intermediate": {
+      "days": 4,
+      "workouts": {
+        "Day 1": {
+          "exercises": ["Incline Bench Press", "Pull-ups", "Bicep Curls", "Dips"]
+        },
+        "Day 2": {
+          "exercises": ["Squats", "Romanian Deadlifts", "Lunges", "Leg Curls"]
+        },
+        "Day 3": {
+          "exercises": ["Overhead Shoulder Press", "Lateral Raises", "Face Pulls", "Tricep Kickbacks"]
+        },
+        "Day 4": {
+          "exercises": ["Deadlifts", "Seated Cable Rows", "Hamstring Curls", "Calf Raises"]
+        }
+      }
+    },
+    "expert": {
+      "days": 5,
+      "workouts": {
+        "Day 1": {
+          "exercises": ["Bench Press", "Incline Dumbbell Press", "Chest Flys"]
+        },
+        "Day 2": {
+          "exercises": ["Squats", "Bulgarian Split Squats", "Calf Raises"]
+        },
+        "Day 3": {
+          "exercises": ["Deadlifts", "Pull-ups", "Barbell Rows"]
+        },
+        "Day 4": {
+          "exercises": ["Overhead Shoulder Press", "Lateral Raises", "Face Pulls"]
+        },
+        "Day 5": {
+          "exercises": ["Tricep Dips", "Hammer Curls", "Cable Crossovers"]
+        }
+      }
+    }
+  }
+}

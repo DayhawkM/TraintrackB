@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Workout Plan Generator{% endblock %}
+
+{% block content %}
+    <h1>Generate Your Workout Plan</h1>
+
+    <div class="workout-generator-wrapper">
+        <div class="workout-generator-container">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+
+                <div>
+                    <label for="goals">{{ form.goals.label }}</label>
+                    {{ form.goals(id="goals", value="", placeholder="Select a Goal") }}
+                </div>
+
+                <div>
+                    <label for="experience_level">{{ form.experience_level.label }}</label>
+                    {{ form.experience_level(id="experience_level", value="", placeholder="Select Experience Level") }}
+                </div>
+
+                <div>
+                    {{ form.submit(class="btn") }}
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
