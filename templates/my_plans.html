@@ -25,9 +25,9 @@
                         {% for exercise in data.exercises %}
                             <div>
                                 <label>{{ exercise }} Reps:</label>
-                                <input type="number" name="{{ exercise }}_reps" required>
+                                <input type="number" name="{{ exercise }}_reps" >
                                 <label>Weight (kg):</label>
-                                <input type="number" name="{{ exercise }}_weight" step="0.1" required>
+                                <input type="number" name="{{ exercise }}_weight" step="0.1">
                             </div>
                         {% endfor %}
 

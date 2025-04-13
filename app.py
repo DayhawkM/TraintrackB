@@ -7,11 +7,11 @@ import json
 from datetime import datetime
 from flask_talisman import Talisman
 
-#pip install flask flask-sqlalchemy flask-migrate flask-wtf wtforms werkzeug email_validator flask_talisman
+#pip install flask flask-sqlalchemy flask-migrate flask-wtf wtforms werkzeug email_validator flask_talisman gunicorn
 #install extension "SQLite Viewer" for better database readability
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = '4v7wTjP#x9z@Uo3K1s$4Mqa2L5VfR8L7yD5ZpA0jF6!A1nQ'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///traintrack.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -20,10 +20,11 @@ talisman = Talisman(
     content_security_policy={
         'default-src': "'self'",
         'style-src': "'self'",
-        'script-src': "'self'",
-        'img-src': "'self' data:"
+        'script-src': "'self' 'unsafe-inline'", 
+        'img-src': "'self'" 
     }
 )
+
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
@@ -58,18 +59,6 @@ class Plan(db.Model):
 
     user = db.relationship('User', backref=db.backref('plans', lazy=True))
 
-class Day(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    plan_id = db.Column(db.Integer, db.ForeignKey('plan.id'))
-    day_name = db.Column(db.String(50))
-    
-    exercises = db.relationship('Exercise', backref='day', lazy=True)
-
-class Exercise(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    day_id = db.Column(db.Integer, db.ForeignKey('day.id'))
-    name = db.Column(db.String(100))
-
 def init_db():
     with app.app_context():
         db.create_all()
@@ -88,6 +77,12 @@ def assign_workout(goals, experience_level):
         return plan["workouts"]
     else:
         raise ValueError(f"Workout data missing for goal: {goals}, level: {experience_level}")
+
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 @app.route('/about')
@@ -177,9 +172,6 @@ def logout():
     session.pop('user_id', None)
     return redirect('/login')
 
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 @app.route('/my_plans')
 def my_plans():
@@ -208,15 +200,7 @@ def clear_plans():
 
 
 
-@app.route('/get_plan_days/<int:plan_id>')
-def get_plan_days(plan_id):
-    days = Day.query.filter_by(plan_id=plan_id).all()
-    return jsonify({"days": [{"id": day.id, "day_name": day.day_name} for day in days]})
 
-@app.route('/get_plan_exercises/<int:day_id>')
-def get_plan_exercises(day_id):
-    exercises = Exercise.query.filter_by(day_id=day_id).all()
-    return jsonify([{"id": exercise.id, "name": exercise.name} for exercise in exercises])
 
 @app.route('/save_workout', methods=['POST'])
 def save_workout():

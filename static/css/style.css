@@ -297,7 +297,7 @@ h1::after {
     background-color: #e6f7e6;
 }
 
-/* Workout Days - Initially Hidden */
+
 .day-list {
     display: none;
     padding: 10px;
@@ -318,7 +318,7 @@ h1::after {
     background-color: #dbe9db;
 }
 
-/* Exercise Form - Initially Hidden */
+
 .exercise-form {
     display: none;
     padding: 10px;
@@ -328,14 +328,12 @@ h1::after {
     margin-top: 5px;
 }
 
-/* Inputs for reps and weight */
-.exercise-form input[type="number"], 
-.exercise-form input[type="text"] {
+
+.exercise-form input[type="number"] {
     width: 60px;
     margin: 5px;
 }
 
-/* Save Workout Button */
 .save-button {
     margin-top: 10px;
     background-color: #4CAF50;
