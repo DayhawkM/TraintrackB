@@ -46,18 +46,26 @@ nav a:hover {
 @media (max-width: 768px) {
     nav {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2px;
-        padding: 10px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        padding: 5px 0;
     }
 
     nav a {
         font-size: 1.2rem;
-        padding: 5px;
+        padding: 8px 16px;
+        text-align: center;
+        flex: 0 1 auto;
+        width: 140px; /* <-- Set width for flexible columns */
     }
 }
 
+@media (max-width: 425px) {
+    nav a {
+        width: 45%; /* <-- Adjust to 45% to allow two buttons per row */
+    }
+}
 
 
 /* ========================================= */
