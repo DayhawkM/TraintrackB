@@ -43,7 +43,7 @@ nav a:hover {
     background-color: #4CAF50;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 425px) {
     nav {
         display: flex;
         flex-wrap: wrap;
@@ -66,6 +66,46 @@ nav a:hover {
         width: 45%; /* <-- Adjust to 45% to allow two buttons per row */
     }
 }
+
+/* Hide the menu toggle by default */
+#menu-toggle {
+    display: none;
+}
+
+/* Hamburger icon */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        text-align: right;
+        color: white;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #222;
+        padding: 10px;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        margin: 5px 0;
+        font-size: 1.1rem;
+    }
+}
+
 
 
 /* ========================================= */
@@ -264,6 +304,31 @@ h1::after {
     }
 }
 
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .about-image {
+        width: 90%;
+        height: auto;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+
+    .about-text {
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+}
 
 
 /* ========================================= */
