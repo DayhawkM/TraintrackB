@@ -57,22 +57,22 @@ nav a:hover {
         padding: 8px 16px;
         text-align: center;
         flex: 0 1 auto;
-        width: 140px; /* <-- Set width for flexible columns */
+        width: 140px; 
     }
 }
 
 @media (max-width: 425px) {
     nav a {
-        width: 45%; /* <-- Adjust to 45% to allow two buttons per row */
+        width: 45%; 
     }
 }
 
-/* Hide the menu toggle by default */
+
 #menu-toggle {
     display: none;
 }
 
-/* Hamburger icon */
+
 .menu-icon {
     display: none;
     font-size: 30px;
@@ -80,7 +80,7 @@ nav a:hover {
     padding: 10px 20px;
 }
 
-/* Mobile styles */
+
 @media (max-width: 768px) {
     .menu-icon {
         display: block;
@@ -124,14 +124,14 @@ h1 {
     animation: fadeInUp 1s ease-out forwards;
 }
 
-/* Green Highlighted Span for Fitness Feel */
+
 h1 span {
     color: #4CAF50;
     font-weight: bold;
     font-size: 3.8rem;
 }
 
-/* Subtle Line Under Header */
+
 h1::after {
     content: "";
     display: block;
@@ -144,7 +144,7 @@ h1::after {
     animation: fadeIn 1.5s ease-out forwards 0.5s;
 }
 
-/* Fade-In Animation */
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -180,7 +180,7 @@ h1::after {
     position: relative;
 }
 
-/* Hero Image */
+
 .index-image {
     width: 45%;
     max-width: auto;
@@ -193,7 +193,7 @@ h1::after {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Text Box */
+
 .index-text {
     width: 45%;
     max-width: 400px;
@@ -207,7 +207,7 @@ h1::after {
     animation: slideUp 1.5s ease-out forwards 0.5s;
 }
 
-/* Text Content */
+
 .index-text p {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -248,7 +248,7 @@ h1::after {
     position: relative;
 }
 
-/* Image Animation */
+
 .about-image {
     width: 600px;
     height: 600px;
@@ -260,7 +260,7 @@ h1::after {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* About Me Text Box */
+
 .about-text {
     width: 45%;
     max-width: 400px;
@@ -274,14 +274,14 @@ h1::after {
     animation: slideUp 1.5s ease-out forwards 0.5s;
 }
 
-/* Text Content */
+
 .about-text p {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 15px;
 }
 
-/* Keyframes */
+
 @keyframes slideInLeft {
     from {
         opacity: 0;
@@ -335,7 +335,7 @@ h1::after {
 /* ============ Animations ================= */
 /* ========================================= */
 
-/* Slide in from Left */
+
 @keyframes slideInLeft {
     from {
         opacity: 0;
@@ -347,7 +347,6 @@ h1::after {
     }
 }
 
-/* Slide Up from Bottom */
 @keyframes slideUp {
     from {
         opacity: 0;
@@ -393,7 +392,7 @@ h1::after {
     margin-top: 10px;
 }
 
-/* Each Workout Day */
+
 .day {
     margin: 10px 0;
     cursor: pointer;
@@ -438,7 +437,7 @@ h1::after {
     background-color: #45a049;
 }
 
-/* Clear Plans Button */
+
 .clear-plans-form {
     text-align: center;
     margin-top: 20px;
@@ -479,7 +478,7 @@ h1::after {
     animation: slideDown 0.5s ease-in-out forwards;
 }
 
-/* Slide Down for Exercise Form */
+
 @keyframes slideDownExercises {
     from {
         max-height: 0;
@@ -510,7 +509,7 @@ h1::after {
     animation: fadeIn 1s ease-out;
 }
 
-/* Workout Cards */
+
 .workout-card {
     background: linear-gradient(to bottom right, #f9f9f9, #eef1f7);
     padding: 20px;
@@ -522,14 +521,14 @@ h1::after {
     animation: slideInRight 0.8s ease-out forwards;
 }
 
-/* Workout Date Heading */
+
 .workout-card h3 {
     color: #4CAF50;
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-/* Workout Tables */
+
 .workout-table {
     width: 100%;
     border-collapse: collapse;
@@ -556,12 +555,12 @@ h1::after {
     background-color: #f8f8f8;
 }
 
-/* Hover effect for rows */
+
 .workout-table tr:hover {
     background-color: #e8f5e9;
 }
 
-/* Cardio Highlight */
+
 .cardio {
     font-style: italic;
     color: #d9534f;
@@ -569,7 +568,7 @@ h1::after {
     margin-top: 10px;
 }
 
-/* Clear Workouts Button */
+
 .clear-workouts-form {
     text-align: center;
     margin-top: 30px;
@@ -619,15 +618,15 @@ h1::after {
 /* ============ Workout Generator Page ===== */
 /* ========================================= */
 
-/* Wrapper for Full-Centered Layout */
+
 .workout-generator-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh; /* Centers within viewport */
+    height: 80vh; 
 }
 
-/* Workout Generator Box */
+
 .workout-generator-container {
     width: 100%;
     max-width: 500px;
@@ -639,7 +638,7 @@ h1::after {
     animation: fadeIn 1s ease-out;
 }
 
-/* Centering the Title */
+
 h1 {
     text-align: center;
     font-size: 2.5rem;
@@ -647,14 +646,13 @@ h1 {
     color: #4CAF50;
 }
 
-/* Form Styling */
 .workout-generator-container form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Labels */
+
 .workout-generator-container label {
     font-size: 1.1rem;
     font-weight: bold;
@@ -664,7 +662,7 @@ h1 {
     margin-bottom: 5px;
 }
 
-/* Input Fields */
+
 .workout-generator-container select {
     width: 100%;
     padding: 12px;
@@ -681,7 +679,7 @@ h1 {
     outline: none;
 }
 
-/* Submit Button */
+
 .workout-generator-container .btn {
     width: 100%;
     padding: 12px;
@@ -700,7 +698,7 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Fade-in Effect */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
